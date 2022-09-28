@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio4</title>
+</head>
+<body>
+    <h1>My Calculator</h1>
+
+    <button onclick="myFunction()">Try it</button>
+    
+    <p id="o1"></p>
+    <p id="o2"></p>
+    <p id="o3"></p>
+    <p id="o4"></p>
+    
+    <script>
+    function myFunction() {
+      let n1 = prompt("First number", "1.0");
+      let n2 = prompt("Second number", "2.0");
+      let n3 = prompt("Third number", "3.0");
+      let n4 = prompt("Fourth number", "4.0");
+    
+        document.getElementById("o1").innerHTML =
+        "Suma de todos = " + (parseFloat(n1)+parseFloat(n2)+parseFloat(n3)+parseFloat(n4));
+        
+        document.getElementById("o2").innerHTML =
+        "Producto de todos = " + (parseFloat(n1)*parseFloat(n2)*parseFloat(n3)*parseFloat(n4));
+
+        document.getElementById("o3").innerHTML =
+        "Resta de los primeros = " + (parseFloat(n1)-parseFloat(n2));
+
+        document.getElementById("o4").innerHTML =
+        "División de los últimos = " + (parseFloat(n3)/parseFloat(n4));
+    }
+    </script>
+</body>
+</html>

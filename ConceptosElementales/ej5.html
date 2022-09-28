@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio5</title>
+</head>
+<body>
+    <h1>My items</h1>
+
+    <button onclick="myFunction()">Calculate</button>
+    
+    <p id="o1"></p>
+    
+    <script>
+    function myFunction() {
+      let price = prompt("Price", "1.0");
+      let quantity = prompt("Quantity", "1");
+    
+        document.getElementById("o1").innerHTML =
+        "Total = " + (parseFloat(price)*parseInt(quantity)) + "€";
+    }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio6</title>
+</head>
+<body>
+    <h1>My novel</h1>
+    
+    <input type="text" id="text"> <!-- we need an id to refer what user writes --> 
+    <button onclick="myFunction()">Add text</button>
+  
+    <div id="texts"></div> <!-- place where we see the result -->
+    
+    <script>
+    function myFunction() {
+        
+        let txt = document.getElementById("text") // user's text taken
+        let all = document.getElementById("texts") // variable to capture the result
+
+        all.innerHTML += txt.value+" " // each time we add all, including a white space
+    }
+    </script>
+</body>
+</html>
