@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio9</title>
+</head>
+<body>
+    <!--
+        Se ingresa por teclado un número positivo de uno o dos dígitos controlar si el
+número introducido es correcto y mostrar un mensaje indicando si el número
+tiene uno o dos dígitos (recordar de convertir a entero con parseInt para
+preguntar posteriormente por una variable entera). Tener en cuenta qué
+condición debe cumplirse para tener dos dígitos un número entero.
+    -->
+    <h1>1 or 2 Digits</h1>
+    
+    <label for="number">Your number:</label>
+    <input type="text" id="num" name="num" value="0" required>
+
+    <button onclick="myFunction()">Guess</button>
+
+    <p id="result"></p>
+
+    <script>
+        function myFunction(){
+            let number = parseInt(document.getElementById("num").value)  
+            let result
+
+            if(number<100 && number>=0){
+                result = number>=10 ? "2 digits" : "1 digit"
+            } else{
+                alert("Your number must be between 0 and 99")
+            }
+            document.getElementById("result").innerHTML = "Your number has " + result
+        }
+    </script>
+</body>
+</html>

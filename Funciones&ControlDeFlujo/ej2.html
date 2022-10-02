@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio2</title>
+</head>
+<body>
+    <h1>People</h1>
+    
+    <label for="username">Username:</label>
+    <input type="text" id="name" name="username" value="myName" required>
+    <button onclick="myFunction()">Add name</button>
+
+    <ul id="allNames"></ul>
+
+    <script>
+        function myFunction(){
+            let name = document.getElementById("name")
+            let li = document.createElement("li");
+            li.innerHTML = name.value
+
+            if(name.value===""){
+                alert('You must write a name')
+            } else{
+                allNames.appendChild(li)
+            }
+        }
+    </script>
+</body>
+</html>

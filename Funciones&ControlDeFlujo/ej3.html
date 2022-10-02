@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio3</title>
+</head>
+<body>
+    <h1>Choose one of these options</h1>
+    <form>
+        <input type="radio" id="option1" name="option" value="option1" onclick="myFunction()">
+        <label for="option1">Option 1</label><br>
+        <input type="radio" id="option2" name="option" value="option2" onclick="myFunction()">
+        <label for="option2">Option 2</label><br>
+        <input type="radio" id="option3" name="option" value="option3" onclick="myFunction()">
+        <label for="option3">Option 3</label><br>
+    </form>
+    
+    <script>
+    function myFunction() {
+        if(document.getElementById("option1").checked){
+            alert("You have selected Option 1")
+        } else if(document.getElementById("option2").checked){
+            alert("You have selected Option 2")
+        } else if (document.getElementById("option3").checked){
+            alert("You have selected Option 3")
+        }
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio10</title>
+</head>
+<body>
+    <!--
+        Confeccionar un programa que permita cargar un número entero positivo de
+hasta tres cifras y muestre un mensaje indicando si tiene 1, 2, o 3 cifras.
+    -->
+    <h1>1, 2 or 3 Digits</h1>
+    
+    <label for="number">Your number:</label>
+    <input type="text" id="num" name="num" value="0" required>
+
+    <button onclick="myFunction()">Guess</button>
+
+    <p id="result"></p>
+
+    <script>
+        function myFunction(){
+            let number = parseInt(document.getElementById("num").value)  
+            let result
+
+            if(number<1000 && number>=0){
+                if(number>=0 && number<10){
+                    result = "1 digit"
+                } else if(number>9 && number<100){
+                    result = "2 digits"
+                } else if(number>99 && number<=999){
+                    result = "3 digits"
+                }
+            } else{
+                alert("Your number must be between 0 and 999")
+            }
+            document.getElementById("result").innerHTML = "Your number has " + result
+        }
+    </script>
+</body>
+</html>

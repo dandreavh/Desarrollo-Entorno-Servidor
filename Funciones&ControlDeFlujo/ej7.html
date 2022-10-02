@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio7</title>
+</head>
+<body>
+    <!--
+        Se ingresa por teclado un valor entero, mostrar una leyenda que indique si el
+número es positivo, cero o negativo.
+    -->
+    <h1>Positive, Negative or Zero</h1>
+    
+    <label for="number">Your number:</label>
+    <input type="text" id="num" name="num" value="0" required>
+
+    <button onclick="myFunction()">Guess</button>
+
+    <p id="result"></p>
+
+    <script>
+        function myFunction(){
+            let number = parseInt(document.getElementById("num").value)  
+            let result
+
+            if(number===0){
+                result = "ZERO"
+            } else{
+                result = number>0 ? "POSITIVE" : "NEGATIVE"
+            }
+            document.getElementById("result").innerHTML = "Your number is " + result
+        }
+    </script>
+</body>
+</html>

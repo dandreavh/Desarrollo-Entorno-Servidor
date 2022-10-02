@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1</title>
+</head>
+<body>
+    <h1>The biggest</h1>
+        
+    <input type="number" id="num1">
+    <input type="number" id="num2">
+
+    <button onclick="myFunction(num1, num2)">Which is the biggest?</button>
+
+    <script>
+        function myFunction(num1, num2) {
+            num1.value>=parseInt(num2.value) ? alert('The biggest is ' + num1.value) : alert('The biggest is ' + num2.value)
+        }
+    </script>
+</body>
+</html>

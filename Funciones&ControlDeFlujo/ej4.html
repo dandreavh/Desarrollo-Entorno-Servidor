@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio4</title>
+</head>
+<body>
+    <!--
+        Realizar un programa que lea por teclado dos números, si el primero es mayor
+al segundo informar su suma y diferencia, en caso contrario informar el
+producto y la división del primero respecto al segundo.
+    -->
+    <h1>Two numbers</h1>
+    
+    <label for="firstNumber">First number:</label>
+    <input type="text" id="n1" name="number" value="1" required>
+    <label for="secondNumber">Second number:</label>
+    <input type="text" id="n2" name="number" value="2" required>
+    <button onclick="myFunction()">Operate</button>
+
+    <p id="result"></p>
+
+    <script>
+        function myFunction(){
+            let n1 = parseInt(document.getElementById("n1").value) 
+            let n2 = parseInt(document.getElementById("n2").value) 
+            let r1, r2, result
+
+            if(n1 > n2){
+                r1 = n1+n2
+                r2 = n1-n2
+                result = "Suma: " + n1 + " + " + n2 + " = " + r1 + "<br>Resta: "+ n1 + " - " + n2 + " = " + r2
+            } else{
+                r1 = n2*n1
+                r2 = n2/n1
+                result = "Multiplicación: " + n2 + " x " + n1 + " = " + r1 + "<br>División: "+ n2 + " / " + n1 + " = " + r2
+            }
+            document.getElementById("result").innerHTML = result
+        }
+    </script>
+</body>
+</html>

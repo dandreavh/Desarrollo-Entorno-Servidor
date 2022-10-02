@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio5</title>
+</head>
+<body>
+    <!--
+        Programa en el que se ingresen tres notas de un alumno, si el promedio es
+menor que 5 mostrar el mensaje “Repetidor”, entre 5 y 7 mostrar el mensaje
+“Superado” y si es mayor o igual a siete mostrar el mensaje ‘Promocionado’.
+Tener en cuenta que para obtener el promedio debemos operar la suma de las
+notas; y luego hacer promedio=suma/3;
+    -->
+    <h1>Marks</h1>
+    
+    <label for="firstNumber">First mark:</label>
+    <input type="text" id="n1" name="mark" value="5" required>
+    <label for="secondNumber">Second mark:</label>
+    <input type="text" id="n2" name="mark" value="6" required>
+    <label for="secondNumber">Second mark:</label>
+    <input type="text" id="n3" name="mark" value="7" required>
+
+    <button onclick="myFunction()">Operate</button>
+
+    <p id="result"></p>
+
+    <script>
+        function myFunction(){
+            let n1 = parseFloat(document.getElementById("n1").value) 
+            let n2 = parseFloat(document.getElementById("n2").value) 
+            let n3 = parseFloat(document.getElementById("n3").value) 
+            let prom = (n1+n2+n3)/3
+            let result
+
+            if((n1>=0 && n1<=10)&&(n2>=0 && n2<=10)&&(n3>=0 && n3<=10)){
+
+                if(prom<5){
+                    result = "Repetidor"
+                } else if(prom>=5 && prom<7){
+                    result = "Superado"
+                } else if(prom>=7){
+                    result = "Promocionado"
+                }
+            } else{
+                alert('Valores erróneos')
+            }
+            document.getElementById("result").innerHTML = result + prom
+        }
+    </script>
+</body>
+</html>
