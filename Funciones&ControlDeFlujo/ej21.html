@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio21</title>
+</head>
+<body>
+    <!--
+        Escribe una función iterativa que dado un número entero n, retorne un array
+        con todos los números enteros en orden decreciente desde n a 1
+    -->
+    <h1>From my number to 1</h1>
+    
+    <label for="number">My number:</label>
+    <input type="text" id="number" name="number" value="10" required>
+
+    <button onclick="myFunction()">Show me</button>
+
+    <p id="result"></p>
+
+    <script>
+        function myFunction(){
+            let n = parseInt(document.getElementById("number").value)  
+            let result = []
+
+            for (let i = n; i > 0; i--) {
+                result.push(i)
+            }
+            document.getElementById("result").innerHTML = result
+        }
+    </script>
+</body>
+</html>

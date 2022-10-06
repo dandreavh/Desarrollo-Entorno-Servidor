@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio23</title>
+</head>
+<body>
+    <!--
+        Calcular el precio de un producto introduciendo la base imponible (BI) y
+        seleccionando el tipo de iva que se le aplica (normal:21%, reducido:10%) e
+        introduciendo el peso para calcular los gastos de envío (Peso < 1Kg: 3€, Peso<
+        3kg:5€ y Peso>=3Kg 10€).
+        Precio= BI + Cuota IVA (%sobreBI) + Gastos envío
+    -->
+    <h1>Precio total de un producto</h1>
+    
+    <label for="bi">BI:</label>
+    <input type="text" id="bi" name="bi" value="100" required>
+    <label for="iva">IVA (normal o reducido):</label>
+    <input type="text" id="iva" name="iva" value="normal" required>
+    <label for="peso">Peso (kg):</label>
+    <input type="text" id="peso" name="peso" value="1" required>
+
+    <button onclick="myFunction()">Calcula</button>
+
+    <p id="result"></p>
+
+    <script>
+        function myFunction(){
+            let bi = parseInt(document.getElementById("bi").value)  
+            let iva = (document.getElementById("iva").value) 
+            let peso = parseFloat(document.getElementById("peso").value)  
+            let envio
+            let result
+
+            if(bi>0 && peso>0 && (iva==="normal" || iva==="reducido")){
+                if(iva==="normal"){
+                    iva = 0.21
+                } else if(iva==="reducido"){
+                    iva = 0.10
+                }
+
+                if(peso<1){
+                    envio = 3
+                } else if(peso<3){
+                    envio = 5
+                } else if(peso>=3){
+                    envio = 10
+                }
+
+                result = bi + (bi*iva) + envio
+                
+            } else{
+                alert("Datos erróneos")
+            }
+            document.getElementById("result").innerHTML = "Precio total del producto " + result + "€"
+        }
+    </script>    
+</body>
+</html>

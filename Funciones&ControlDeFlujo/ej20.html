@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio20</title>
+</head>
+<body>
+    <!--
+        Realizar un programa para un concesionario que calcule el descuento de un
+        coche según su marca y modelo, en base a los siguientes datos:
+        ● Si la marca es Renault tiene un 15% de descuento.
+        ● Si la marca es Ford y el modelo es Fiesta tiene un descuento del 7%
+        ● Si la marca es Ford y el modelo es Focus tiene un descuento del 10%
+        ● El resto solo tiene un descuento del 5%.
+    -->
+    <h1>Car Discount</h1>
+    
+    <label for="brand">Brand:</label>
+    <input type="text" id="brand" name="brand" value="Ford" required>
+    <label for="model">Model:</label>
+    <input type="text" id="model" name="model" value="Focus" required>
+
+    <button onclick="myFunction()">Discount</button>
+
+    <p id="result"></p>
+
+    <script>
+        function myFunction(){
+            let brand = (document.getElementById("brand").value)  
+            let model = (document.getElementById("model").value)
+            let result
+
+            if((brand==="Ford")){
+                if(model==="Fiesta"){
+                    result = "7"
+                } else if(model==="Focus"){
+                    result = "10"
+                } else{
+                    result = "5"
+                }
+            } else if(brand==="Renault"){
+                result = "15"
+            } else{
+                result = "5"
+            }
+            document.getElementById("result").innerHTML = "This car has "+ result +"% Discount"
+        }
+    </script>
+</body>
+</html>

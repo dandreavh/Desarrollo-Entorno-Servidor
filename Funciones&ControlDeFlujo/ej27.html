@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio27</title>
+</head>
+<body>
+    <!--
+        Realiza una página que contenga una función JavaScript para hacer
+        estadísticas sobre una cadena de texto que se introduzca, contando el número
+        de veces que aparece cada letra. Se deberá mostrar un listado con las letras
+        del abecedario con el número de veces que aparece cada letra en la cadena
+        que se la pasa. Utilizar un Array para almacenar la información estadística. No
+        se tendrán en cuenta que pudiera haber tildes, consideraremos que no existen
+    -->
+    <h1>Cuenta las apariciones de cada letra</h1>
+    <input type="text" id="texto" value="este es mi texto de ejemplo">
+    <button type="button" id="boton" onclick="myFunction()">Buscar</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function myFunction(){ // COPIADO
+            let texto = document.getElementById('texto')
+            value.trim().toLowerCase().split("")
+            let repeticiones = {}
+            
+            // Ciclamos el texto del input y verificamos si existe y sumamos 1, de no existir siempre valdrá 1
+            texto.forEach((letra) => {
+                repeticiones[letra] = (repeticiones[letra] || 0 ) + 1
+            });
+            
+            // Ahora ciclamos el objeto y lo agregamos al resultado
+            for( let letra in repeticiones ) {
+                let text = `${ letra } = ${repeticiones[letra]}, `
+                document.getElementById("resultado").innerHTML += text
+            }
+        }
+    </script>
+</body>
+</html>

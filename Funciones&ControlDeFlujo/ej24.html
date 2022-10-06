@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio24</title>
+</head>
+<body>
+    <!--
+        Realizar un programa que simule un Juego de dados. El usuario empieza con
+        50€ para apostar. El usuario indica a qué número apostar entre el 1 y el 6. Se
+        hace una asignación al azar entre 1 y 6. Si el usuario acierta, gana el doble de
+        lo apostado y si no acierta, pierde lo apostado. El juego acaba cuando el
+        usuario llega a 0€ (pierde) o llega a 200€ (gana)
+    -->
+    <h1>Apuesta con dado</h1>
+    
+    <label for="numero">Mi número:</label>
+    <input type="text" id="numero" name="numero" value="5" required>
+    <label for="apuesta">Mi apuesta:</label>
+    <input type="text" id="apuesta" name="apuesta" value="20" required>
+
+    <button onclick="myFunction()">Apuesta</button>
+
+    <p id="saldo"></p>
+    <p id="resultado"></p>
+
+    <script>
+        function myFunction(){
+            let numero = parseInt(document.getElementById("numero").value)
+            let apuesta = parseInt(document.getElementById("apuesta").value)             
+            let saldo = 50  
+            let resultado
+
+            do {
+                debugger
+                resultado = Math.floor(Math.random() * (6 - 1) + 1)
+                if(apuesta>saldo && apuesta<=0){
+                    alert("Debe apostar una cantidad mayor a 0 y menor que su saldo")
+                }
+
+                if(saldo<=0){
+                    alert("Usted está en bancarrota, no puede jugar más")
+                } else if(saldo>=200 && numero===resultado){
+                    alert("Enhorabuena, ¡ha llegado al máximo! Ahora tiene" + saldo + "€")
+                    break;
+                }
+    
+                if(numero===resultado){
+                    saldo += apuesta*2                   
+                } else{
+                    saldo -= apuesta
+                }
+
+                document.getElementById("saldo").innerHTML = "Saldo actual: " + saldo + "€"
+                document.getElementById("resultado").innerHTML = "Número ganador: " + resultado
+            } while (saldo>0 && saldo<=200 && apuesta>0 && apuesta<=saldo);
+
+        }
+    </script>
+</body>
+</html>

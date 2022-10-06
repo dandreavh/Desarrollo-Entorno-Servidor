@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio26</title>
+</head>
+<body>
+    <!--
+        Dado un vector de enteros, comprobar el mayor, el menor y por último la media de todos.
+        El botón «Cargar Ejemplo» pondrá un ejemplo de números predefinidos.
+    -->
+    <h1>El mayor, el menor y la media</h1>
+    <form>
+        <label for="texto">Mis números</label>
+        <br><br>
+        <input id="texto" name="texto"> </input>
+        <br><br>
+        <button onclick="calcular()">Enviar</button>
+        <button onclick="ejemplo()">Cargar Ejemplo</button>
+        <button onclick="reiniciar()">Reiniciar</button>
+    </form>
+    <script>
+        function ejemplo(){ // no muestra los valores
+            document.getElementById("texto").value="1,2,3,4,5,6"
+        }
+
+        function reiniciar(){
+            location.reload()
+        }
+        
+        function calcular(){
+            let array = document.getElementById("texto").value.split(",")
+            let mayor = array[0]
+            let menor = array[0]
+            let suma = 0
+            let media = 0
+                       
+            for(let i=0; i<array.length; i++){
+                if(parseInt(array[i])>mayor){
+                    mayor = array[i]
+                } 
+                if(parseInt(array[i])<menor){
+                    menor = array[i];
+                } 
+                suma += parseInt(array[i])
+            }
+
+            media = suma/array.length;
+
+            alert("El mayor es el " + mayor + "\nEl menor es el " + menor + "\nLa suma de todos es " + suma + "\nLa media de todos es " + media)
+        }
+    </script>
+</body>
+</html>

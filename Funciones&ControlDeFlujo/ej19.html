@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio19</title>
+</head>
+<body>
+    <!--
+        Realizar un programa que introduciendo el mes y el año devuelva el número de
+        días que tiene dicho mes. Recordar que hay que controlar si el año es bisiesto
+    -->
+    <h1>Days of the Month</h1>
+    
+    <label for="month">Month:</label>
+    <input type="text" id="month" name="month" value="1" required>
+    <label for="year">Year:</label>
+    <input type="text" id="year" name="year" value="2001" required>
+
+    <button onclick="myFunction()">How many days?</button>
+
+    <p id="result"></p>
+
+    <script>
+        function myFunction(){
+            let month = parseInt(document.getElementById("month").value)  
+            let year = parseInt(document.getElementById("year").value)
+            let result
+
+            if((month>0 && month<=12)){
+                switch (month){
+                    case 1:
+                    case 3:
+                    case 5:
+                    case 7:
+                    case 8:
+                    case 10:
+                    case 12: result=31; break;
+                    case 4:
+                    case 6:
+                    case 9:
+                    case 11: result=30; break;
+                    case 2:
+                        if (year%4==0 && year%100!=0 || year%400==0){
+                            result=29
+                        }else{
+                            result=28
+                        }
+                    break;
+                }
+            } else{
+                alert("Vefify the month, it must be real (1-12)!")
+            }
+            document.getElementById("result").innerHTML = "This month has "+ result + " days"
+        }
+    </script>
+</body>
+</html>

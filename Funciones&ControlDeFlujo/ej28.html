@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio28</title>
+</head>
+<body>
+    <!--
+        Realizar un programa que se introduzca la fecha de nacimiento y devuelva el
+        signo del zodiaco.
+    -->
+    <h1>Mi horóscopo</h1>
+    <p>Indica el día y el mes de tu cumpleaños</p>
+    
+    <label for="dia">Día</label>
+    <input type="text" id="dia" name="dia" value="27" required>
+    <label for="mes">Mes</label>
+    <input type="text" id="mes" name="mes" value="12" required>
+    
+    <button onclick="myFunction()">Signo</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function myFunction(){
+            let dia = parseInt(document.getElementById("dia").value)
+            let mes = parseInt(document.getElementById("mes").value)
+            let resultado
+
+            if((dia>0 && dia<32) && (mes>0 && mes<13)){
+                if ((dia >= 22 && mes == 12) || (dia <= 20 && mes == 1)){
+                    resultado = "Capricornio"
+                }
+                if ((dia >= 21 && mes == 1) || (dia <= 19 && mes == 2)){
+                    resultado = "Acuario"
+                }
+                if ((dia >= 20 && mes == 2) || (dia <= 20 && mes == 3)){
+                    resultado = "Piscis"
+                }
+                if ((dia >= 21 && mes == 3) || (dia <= 20 && mes == 4)){
+                    resultado = "Aries"
+                }
+                if ((dia >= 21 && mes == 4) || (dia <= 21 && mes == 5)){
+                    resultado = "Tauro"
+                }
+                if ((dia >= 22 && mes == 5) || (dia <= 21 && mes == 6)){
+                    resultado = "Géminis"
+                }
+                if ((dia >= 21 && mes == 6) || (dia <= 23 && mes == 7)){
+                    resultado = "Cáncer"
+                }
+                if ((dia >= 24 && mes == 7) || (dia <= 23 && mes == 8)){
+                    resultado = "Leo"
+                }
+                if ((dia >= 24 && mes == 8) || (dia <= 23 && mes == 9)){
+                    resultado = "Virgo"
+                }
+                if ((dia >= 24 && mes == 9) || (dia <= 23 && mes == 10)){
+                    resultado = "Libra"
+                }
+                if ((dia >= 24 && mes == 10) || (dia <= 22 && mes == 11)){
+                    resultado = "Escorpio"
+                }          
+                if ((dia >= 23 && mes == 11) || (dia <= 21 && mes == 12)){
+                    resultado = "Sagitario"
+                }
+                
+                document.getElementById("resultado").innerHTML = "Tu signo del zodiaco es: " + resultado
+            }else{
+                alert("Día o mes erróneo")
+            }  
+        }
+    </script>
+</body>
+</html>

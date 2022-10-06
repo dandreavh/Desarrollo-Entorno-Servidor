@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio22</title>
+</head>
+<body>
+    <!--
+        Crear un programa donde el usuario introduzca su altura, edad y sexo y le devuelva el peso ideal recomendado. 
+        La fórmula a aplicar es: 50+((altura150)/4)*3 + (Edad-20)/4 y si es mujer *0,9
+    -->
+    <h1>Ideal weight</h1>
+    
+    <label for="height">Height:</label>
+    <input type="text" id="height" name="height" value="168" required>
+    <label for="age">Age:</label>
+    <input type="text" id="age" name="age" value="40" required>
+    <label for="sex">Sex:</label>
+    <input type="text" id="sex" name="sex" value="Woman" required>
+
+    <button onclick="myFunction()">Show me</button>
+
+    <p id="result"></p>
+
+    <script>
+        function myFunction(){
+            let height = parseInt(document.getElementById("height").value)  
+            let age = parseInt(document.getElementById("age").value)  
+            let sex = (document.getElementById("sex").value)  
+            let result
+
+            if(sex!="Woman" && sex!="Man"){
+                alert("Write: Woman or Man")
+            } else{
+                if(sex==="Woman"){
+                    result = 50+(height-150)/4*0.9 + (age-20)/4
+                } else if(sex==="Man"){
+                    result = 50+(height-150)/4*3 + (age-20)/4
+                }
+            }
+            document.getElementById("result").innerHTML = "Your ideal weight is " + result + "kg"
+        }
+    </script>
+</body>
+</html>

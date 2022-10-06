@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio17</title>
+</head>
+<body>
+    <!--
+    De un aspirante a un empleo, que realizó un test de capacitación, se obtuvo la
+    siguiente información: nombre del aspirante, cantidad total de preguntas que se
+    le realizaron y cantidad de preguntas que contestó correctamente. Se pide
+    confeccionar un programa que lea los datos del aspirante e informe el nivel del
+    mismo según el porcentaje de respuestas correctas que ha obtenido, y
+    sabiendo que:
+    ● Nivel superior: Porcentaje>=90%.
+    ● Nivel medio: Porcentaje>=75%.
+    ● Nivel bajo: Porcentaje>=50%.
+    ● Fuera de nivel: Porcentaje<50%
+    -->
+    <h1>Job candidate</h1>
+    
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="Andrea" required>
+    <label for="totalQuestions">Total Questions:</label>
+    <input type="text" id="totalQuestions" name="totalQuestions" value="10" required>
+    <label for="rightQuestions">Right Questions:</label>
+    <input type="text" id="rightQuestions" name="rightQuestions" value="10" required>
+
+    <button onclick="myFunction()">Your level</button>
+
+    <p id="result"></p>
+
+    <script>
+        function myFunction(){
+            let name = (document.getElementById("name").value) 
+            let totalQuestions = parseInt(document.getElementById("totalQuestions").value) 
+            let rightQuestions = parseInt(document.getElementById("rightQuestions").value)
+            let percent = rightQuestions<=totalQuestions ? (rightQuestions*100)/totalQuestions : alert("Check the number of total questions or right questions")
+            let result
+
+            if(percent>=90){
+                result = "Upper Level"
+            } else if(percent>=75){
+                result = "Intermediate Level"
+            } else if(percent>=50){
+                result = "Lower Level"
+            } else if(percent<50){
+                result = "Out of Range Level"
+            }
+            document.getElementById("result").innerHTML = "Your level: " + result
+        }
+    </script>
+</body>
+</html>

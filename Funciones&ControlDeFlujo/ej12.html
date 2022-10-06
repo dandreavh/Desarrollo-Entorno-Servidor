@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio12</title>
+</head>
+<body>
+    <!--
+        Mostrar un mensaje indicando si el número introducido en una caja de texto es par o impar. 
+    -->
+    <h1>Even/Odd</h1>
+    
+    <label for="number">Your number:</label>
+    <input type="text" id="num" name="num" value="0" required>
+
+    <button onclick="myFunction()">Guess</button>
+
+    <p id="result"></p>
+
+    <script>
+        function myFunction(){
+            let number = parseInt(document.getElementById("num").value)  
+            let result = (number%2===0) ? "Odd" : "Even"
+            document.getElementById("result").innerHTML = "Your number is " + result
+        }
+    </script>
+</body>
+</html>

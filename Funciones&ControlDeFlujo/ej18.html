@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio18</title>
+</head>
+<body>
+    <!--
+        De un operario se conoce su sueldo y los años de antigüedad. Se pide realizar
+        un programa que lea los datos de entrada (sueldo y antigüedad) e informe de
+        su sueldo actualizado según las siguientes condiciones:
+        ● Si el sueldo es inferior a 1000 y su antigüedad es igual o superior a 10
+        años, otorgarle un aumento del 20 %, mostrar el sueldo a pagar.
+        ● Si el sueldo es inferior a 1000 pero su antigüedad es menor a 10 años,
+        otorgarle un aumento de 5 %.
+        ● Si el sueldo es mayor o igual a 1000 mostrar el sueldo en la página sin
+        cambios.
+    -->
+    <h1>Salary</h1>
+    
+    <label for="salary">Salary:</label>
+    <input type="text" id="salary" name="salary" value="2000" required>
+    <label for="experience">Experience:</label>
+    <input type="text" id="experience" name="experience" value="10" required>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="result"></p>
+
+    <script>
+        function myFunction(){
+            let salary = parseFloat(document.getElementById("salary").value) 
+            let experience = parseInt(document.getElementById("experience").value)
+            let result
+
+            if(salary>0 && experience>0){
+                if(salary<1000 && experience>=10){
+                    result = (salary*0.20)+salary
+                } else if(salary<1000 && experience<10){
+                    result = (salary*0.05)+salary
+                } else if(salary>=1000){
+                    result = salary
+                }
+            } else{
+                alert("You don't have salary or experience")
+            }
+            document.getElementById("result").innerHTML = "New salary (with or without changes): " + result
+        }
+    </script>
+</body>
+</html>

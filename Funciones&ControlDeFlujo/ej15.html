@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio15</title>
+</head>
+<body>
+    <!--
+Escribe un programa que pida al usuario un día de la semana y que muestre un
+mensaje con el día siguiente.
+Si se introduce un valor que no corresponda a un día de la semana, se le
+mostrará un mensaje al usuario.
+    -->
+    <h1>Next day</h1>
+    
+    <label for="day">Day of the week:</label>
+    <input type="text" id="day" name="day" value="Monday" required>
+
+    <button onclick="myFunction()">Next day</button>
+
+    <p id="result"></p>
+
+    <script>
+        function myFunction(){
+            let day = (document.getElementById("day").value)
+            let nextDay
+            
+            if(day==="Monday" || day==="Tuesday" || day==="Wednesday" || day==="Thursday" || day==="Friday" 
+            || day==="Saturday" || day ==="Sunday"){
+                switch (day) {
+                case "Monday":
+                    nextDay = "Tuesday";
+                    break;
+                case "Tuesday":
+                    nextDay = "Wednesday";
+                    break;
+                case "Wednesday":
+                    nextDay = "Thursday";
+                    break;
+                case "Thursday":
+                    nextDay = "Friday";
+                    break;
+                case "Friday":
+                    nextDay = "Saturday";
+                    break;
+                case "Saturday":
+                    nextDay = "Sunday";
+                    break;
+                case "Sunday":
+                    nextDay = "Monday";
+                    break;
+                }
+            } else{
+                alert("You must write a correct day capitalized")
+            }
+           
+            document.getElementById("result").innerHTML = "The following day is " + nextDay
+        }
+    </script>
+    
+</body>
+</html>

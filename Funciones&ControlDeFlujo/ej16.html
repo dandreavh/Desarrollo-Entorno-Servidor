@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio16</title>
+</head>
+<body>
+    <!--
+        Se ingresan tres valores por teclado, si todos son iguales se imprime la suma
+del primero con el segundo y a este resultado se lo multiplica por el tercero
+(tener en cuenta que puede haber tres condiciones simples)
+    -->
+    <h1>3 numbers</h1>
+    
+    <label for="firstNumber">First number:</label>
+    <input type="text" id="n1" name="number" value="1" required>
+    <label for="secondNumber">Second number:</label>
+    <input type="text" id="n2" name="number" value="2" required>
+    <label for="thirdNumber">Third number:</label>
+    <input type="text" id="n3" name="number" value="3" required>
+
+    <button onclick="myFunction()">Operate</button>
+
+    <p id="result"></p>
+
+    <script>
+        function myFunction(){
+            let n1 = parseInt(document.getElementById("n1").value) 
+            let n2 = parseInt(document.getElementById("n2").value) 
+            let n3 = parseInt(document.getElementById("n3").value) 
+            let result
+
+            if(n1===n2 && n1===n3 && n2===n3){
+                result = (n1+n2)*n3
+            }
+            document.getElementById("result").innerHTML = "Total = " + result
+        }
+    </script>
+</body>
+</html>

@@ -20,12 +20,8 @@
             let name = document.getElementById("name")
             let li = document.createElement("li");
             li.innerHTML = name.value
-
-            if(name.value===""){
-                alert('You must write a name')
-            } else{
-                allNames.appendChild(li)
-            }
+            
+            (name.value==="") ? alert('You must write a name') : allNames.appendChild(li)
         }
     </script>
 </body>
