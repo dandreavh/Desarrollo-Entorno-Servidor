@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario, validaciones</title>
+    <link rel="stylesheet" href="formularios.css" />
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <script src="./formularios.js"></script>
+  </head>
+  <body>
+    <h1>Formularios, Validaciones</h1>
+    <form id="Ej1" action="">
+      <fieldset>
+        <legend>
+          <h2>Registro</h2>
+        </legend>
+        <div class="Ej1">
+          <div>
+            <label for="nombre">< >Nombre</ ></label>
+            <input type="text" id="nombre" />
+          </div>
+          <div>
+            <label for="apellido">< >Apellidos</ ></label>
+            <input type="text" name="apellido" id="apellido" />
+          </div>
+          <div>
+            <label for="phone">< >Email</ ></label>
+            <input type="text" id="phone" />
+          </div>
+          <div>
+            <label for="password">< >Password</ ></label>
+            <input type="password" name="password" id="password" />
+          </div>
+          <div>
+            <label for="comentario">< >Comentarios</ ></label>
+            <textarea
+              name="Comentario"
+              id="comentario"
+              cols="30"
+              rows="7"
+            ></textarea>
+          </div>
+          <div>
+            <label for="condiciones">Acepta las <a href="" target="_blank">condiciones</a></label>
+            <input type="checkbox" name="condiciones" id="condiciones" />
+          </div>
+          <button type="submit" onclick="registrarUser()">Enviar</button>
+        </div>
+      </fieldset>
+    </form>
+  </body>
+</html>

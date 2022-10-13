@@ -1,0 +1,10 @@
+*{
+    font-family: sans-serif;
+}
+fieldset{
+    box-shadow: 2px 2px 20px grey;
+    width: max-content;
+}
+div{
+    padding: 0.2rem;
+}
