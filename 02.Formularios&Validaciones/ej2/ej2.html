@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario, validaciones</title>
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <script defer src="./logic.js"></script>
+  </head>
+  <body>
+    <h1>Formularios y Validaciones</h1>
+    <form id="Ej2" action="">
+      <div>
+        <label for="name">Escribe tu nombre</label>
+        <input type="text" id="name" name="name" required/>
+      </div>
+      <div>
+        <label for="surname">Escribe tus apellidos</label>
+        <input type="text" id="surname" name="surname" required/>
+      </div>
+      <div>
+        <label for="email">Escribe tu email</label>
+        <input type="email" id="email" name="email" required/>
+      </div>
+      <div>
+        <label for="web">Web personal</label>
+        <input type="url" id="web" name="web" required/>
+      </div>
+      <div class="btn">
+        <button type="submit">Enviar</button>
+      </div>
+    </form>
+    <div id="newUser"></div>
+  </body>
+</html>

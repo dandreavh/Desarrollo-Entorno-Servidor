@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formulario, validaciones</title>
     <link href="styles.css" rel="stylesheet" type="text/css">
-    <script src="./logic.js"></script>
+    <script defer src="./logic.js"></script>
   </head>
   <body>
     <h1>Formularios y Validaciones</h1>
@@ -49,10 +49,11 @@
             <input type="time" id="hora" name="hora" required/>
           </div>
           <div class="btn">
-            <button type="submit" onclick="registerUser()">Enviar</button>
+            <button type="submit">Enviar</button>
           </div>
         </div>
       </fieldset>
     </form>
+    <div id="newUser"></div>
   </body>
 </html>
