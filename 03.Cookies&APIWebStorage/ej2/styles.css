@@ -1,0 +1,30 @@
+*{
+    font-family: sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+}
+h1{
+    text-align: center;
+}
+fieldset{
+    box-shadow: 2px 2px 20px grey;
+    width: max-content;
+    border-radius: 00.25rem;
+}
+div{
+    padding: 0.5rem;
+}
+.btn{
+    margin-top: 1rem;
+    text-align: center;
+}
+button{
+    border: 0;
+    border-radius: 0.25rem;
+    background-color: rgb(12, 172, 116);
+    padding: 0.5rem;
+    color: white;
+}
+button:hover{
+    background-color: rgb(15, 154, 105);
+}

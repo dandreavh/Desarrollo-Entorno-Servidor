@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario, validaciones</title>
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <script defer src="./logic.js"></script>
+  </head>
+  <body>
+    <h1>Formularios y Validaciones</h1>
+    <form id="Ej4" action="">
+      <fieldset>
+        <legend>
+          <h2>CREACIÓN</h2>
+        </legend>
+        <div>
+          <label for="fecha">Fecha de creación</label>
+          <input type="date" id="fecha" name="fecha" required/>
+        </div>
+        <div>
+          <label for="cocinero">Cocinero/a</label>
+          <input type="text" id="cocinero" name="cocinero" value="WW$1234" required/>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>
+          <h2>DESTINATARIO</h2>
+        </legend>
+        <div>
+          <label for="destinatario">Código de destinatario</label>
+          <input type="text" id="destinatario" name="destinatario" value="NM_alburquerque:1234" required/>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>
+          <h2>DETALLES DEL PRODUCTO</h2>
+        </legend>
+        <div>
+          <label for="gramos">Gramos</label>
+          <input type="number" min="100" max="5000" id="gramos" name="gramos" value="100" required/>
+        </div>
+        <div>
+          <label for="composicion">Composición</label>
+          <input type="text" id="composicion" name="composicion" value="200gC3OH7" required/>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>
+          <h2>DATOS DE PAGO</h2>
+        </legend>
+        <div>
+          <label for="iban">Cuenta bancaria (IBAN)</label>
+          <input type="text" id="iban" name="iban" value="AB03-123456789012-34" required/>
+        </div>
+        <input type="text" id="ibanChecked" name="ibanChecked" hidden/>
+      </fieldset>
+      <div class="btn">
+        <button type="submit">Añadir</button>
+        <button type="submit" onclick="reload()">Recargar</button>
+      </div>
+    </form>
+    <div id="newContent"></div>
+  </body>
+</html>

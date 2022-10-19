@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario, validaciones</title>
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <script defer src="./logic.js"></script>
+    <script defer src="./cookies.js"></script>
+  </head>
+  <body>
+    <h1>Formularios y Validaciones</h1>
+    <form id="Ej1" action="">
+      <fieldset>
+        <legend>
+          <h2>Registro</h2>
+        </legend>
+        <div class="Ej1">
+          <table>
+            <tr>
+              <td><label for="dni">DNI</label></td>
+              <td><input type="text" id="dni" required/></td>
+            </tr>
+            <tr>
+              <td><label for="nombre">Nombre</label></td>
+              <td><input type="text" id="nombre" required/></td>
+            </tr>
+            <tr>
+              <td><label for="apellidos">Apellidos</label></td>
+              <td><input type="text" name="apellidos" id="apellidos" required/></td>
+            </tr>
+            <tr>
+              <td><label for="telefono">Teléfono</label></td>
+              <td><input type="text" name="telefono" id="telefono" required/></td>
+            </tr>
+          </table>
+          <div>
+            <textarea
+              required
+              name="comentario"
+              id="comentario"
+              cols="32"
+              rows="5"
+              placeholder="Escriba aquí, por favor"
+            ></textarea>
+          </div>
+          <div>
+            <label for="hora">Elija una hora</label>
+            <input type="time" id="hora" name="hora" required/>
+          </div>
+          <div id="contador"></div>
+          <div class="btn">
+            <button type="submit">Enviar</button>
+            <button type="submit" onclick="resetearCookie()">Resetear cookie</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+    <div id="newUser"></div>
+  </body>
+</html>
