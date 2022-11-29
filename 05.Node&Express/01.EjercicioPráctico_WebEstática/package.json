@@ -1,0 +1,14 @@
+{
+  "name": "ejerciciopractico_webestatica",
+  "version": "1.0.0",
+  "description": "proyecto básico con recursos estáticos",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dandrevh",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
